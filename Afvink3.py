@@ -17,7 +17,9 @@ def query_maker(compounds, genes, effect):
         for gen in genes.split("\n"):
             # print(gen)
             for eff in effect.split("\n"):
-                print("start query: \"" + comp + "\" AND \"" + gen + "\" AND \"" + eff + "\"")
+                print(
+                    "start query: \"" + comp + "\" AND \"" + gen + "\" AND \""
+                    + eff + "\"")
                 counts, id_list = get_counts_idlist(
                     comp + " AND " + gen + " AND " + eff)
                 most = 0
@@ -55,9 +57,6 @@ def main():
     genes = open("genes.txt").read()
     effect = open("molecular_effects.txt").read()
     query_maker(compounds, genes, effect)
-
-
-
 
 
 main()
