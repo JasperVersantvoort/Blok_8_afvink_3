@@ -56,10 +56,10 @@ def main():
     get_tiab(id_list)
 
     # opdracht query's
-    # compounds = open("compounds.txt").read()
-    # genes = open("genes.txt").read()
-    # effect = open("molecular_effects.txt").read()
-    # query_maker(compounds, genes, effect)
+    compounds = open("compounds.txt").read()
+    genes = open("genes.txt").read()
+    effect = open("molecular_effects.txt").read()
+    query_maker(compounds, genes, effect)
 
 
 main()
