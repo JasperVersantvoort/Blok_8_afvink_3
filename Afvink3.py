@@ -37,12 +37,15 @@ def get_tiab(id_list):
         records = list(Medline.parse(search_handle))
         title = records[0].get("TI", "?")
         abstract = records[0].get("AB", "?")
-        if title == "?" or abstract == "?":
-            print("Title or abstract missing, quitting for now.")
+        aut = records[0].get("FAU", "?")
+        print(records)
+        if title == "?" or abstract == "?" or aut == "?":
+            print("Title, abstract or autor missing, quitting for now.")
             exit()
         else:
             print(pub_id)
             print(title)
+            print(aut)
             print(abstract)
 
 
@@ -53,10 +56,10 @@ def main():
     get_tiab(id_list)
 
     # opdracht query's
-    compounds = open("compounds.txt").read()
-    genes = open("genes.txt").read()
-    effect = open("molecular_effects.txt").read()
-    query_maker(compounds, genes, effect)
+    # compounds = open("compounds.txt").read()
+    # genes = open("genes.txt").read()
+    # effect = open("molecular_effects.txt").read()
+    # query_maker(compounds, genes, effect)
 
 
 main()
